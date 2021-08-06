@@ -79,3 +79,10 @@ spec:
   - port: 80
   selector:
     app: azure-vote-front
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'Azure subscription 1(a8cfe990-930b-45dc-a400-8f590f6df3aa)'
+    azureContainerRegistry: '{"loginServer":"rsdemo01.azurecr.io", "id" : "/subscriptions/a8cfe990-930b-45dc-a400-8f590f6df3aa/resourceGroups/RG_Demo_01/providers/Microsoft.ContainerRegistry/registries/RSDemo01"}'
+    dockerComposeFile: '**/azure-vote-all-in-one-redis.yaml'
+    action: 'Run a Docker Compose command'

@@ -1,4 +1,10 @@
 apiVersion: apps/v1
+- task: Docker@2
+  inputs:
+    command: 'buildAndPush'
+    Dockerfile: '**/azure-vote-all-in-one-redis.yaml'
+    addPipelineData: false
+    addBaseImageData: false
 kind: Deployment
 metadata:
   name: azure-vote-back
